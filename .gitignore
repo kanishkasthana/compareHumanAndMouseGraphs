@@ -1,0 +1,5 @@
+#Ignoring Large Dataset files
+
+*.csv
+.Rproj.user
+*.gtf
