@@ -13,7 +13,14 @@ print(100*length(geneIntersect)/length(mouseGeneNamesInGraph))
 
 humanGeneNamesInGraph=read.csv("geneNamesHuman.csv", header=FALSE, stringsAsFactors = FALSE)
 humanGeneNamesInGraph=unlist(humanGeneNamesInGraph)
+data=read.csv("allHumanProteinCodingGeneNames.csv", header = FALSE, sep = ";", stringsAsFactors = FALSE)
+allHumanProteinCodingGeneNames=data[,1]
 
+#Getting Intersect between human protein coding genes and genes in human single cell graph
+geneIntersectHuman=intersect(as.character(humanGeneNamesInGraph),allHumanProteinCodingGeneNames)
+#It seems like all Human Genes in the graph are protein coding.
+print("All human genes are protein coding:")
+print(identical(as.character(humanGeneNamesInGraph), geneIntersectHuman))
 #By convention human gene names are named in all Capital Letters and their mouse counterparts with only the
 #first letter capitalized. See this link http://www.ncbi.nlm.nih.gov/books/NBK21060/#A5950
 #To get a list of genes that is common to both mouse and human we will convert all mouse gene names to uppercase
@@ -22,4 +29,6 @@ humanGeneNamesInGraph=unlist(humanGeneNamesInGraph)
 mouseGeneNamesInGraphUPPERCASE=sapply(mouseGeneNamesInGraph,toupper)
 #Taking intersection: 13261 common human and mouse genes. Nice!
 commonMouseAndHumanGenes=intersect(humanGeneNamesInGraph,mouseGeneNamesInGraphUPPERCASE)
+
+
 
