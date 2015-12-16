@@ -22,3 +22,4 @@ humanGeneNamesInGraph=unlist(humanGeneNamesInGraph)
 mouseGeneNamesInGraphUPPERCASE=sapply(mouseGeneNamesInGraph,toupper)
 #Taking intersection: 13261 common human and mouse genes. Nice!
 commonMouseAndHumanGenes=intersect(humanGeneNamesInGraph,mouseGeneNamesInGraphUPPERCASE)
+
