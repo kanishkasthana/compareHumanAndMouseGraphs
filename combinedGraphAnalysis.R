@@ -27,3 +27,14 @@ print(dim(humanLogicalGraphIntersectWithMouse))
 
 print("Dimensions of mouse graph intersect:")
 print(dim(mouseLogicalGraphIntersectWithHuman))
+#Note: Hmmm the dimensions are working as expected. Cool
+
+#Plotting some features of the graph. I expect to see a power law. Lets see what happens.
+
+vectorForNumberOfEdgesHuman=apply(humanLogicalGraphIntersectWithMouse,2,sum)
+vectorForNumberOfEdgesMouse=apply(mouseLogicalGraphIntersectWithHuman,2,sum)
+
+pdf("EdgeDistributionForHumanAndMouseGraphIntersects.pdf")
+hist(vectorForNumberOfEdgesMouse,200,main="Histogram of Edge distribution of Mouse Graph Intersect", xlab="Number of Edges", ylab="Frequency of Nodes")
+hist(vectorForNumberOfEdgesHuman,200,main="Histogram of Edge distribution of Human Graph Intersect", xlab="Number of Edges", ylab="Frequency of Nodes")
+dev.off()
