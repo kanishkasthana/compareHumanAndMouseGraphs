@@ -35,10 +35,10 @@ vectorForNumberOfEdgesHuman=apply(humanLogicalGraphIntersectWithMouse,2,sum)
 vectorForNumberOfEdgesMouse=apply(mouseLogicalGraphIntersectWithHuman,2,sum)
 
 pdf("LogEdgeDistributionForMouseGraphIntersects.pdf")
-hist(log(vectorForNumberOfEdgesMouse),200,main="Histogram of Edge distribution of Mouse Graph Intersect", xlab="Number of Edges", ylab="Frequency of Nodes")
+hist(log(vectorForNumberOfEdgesMouse),500,main="Histogram of Edge distribution of Mouse Graph Intersect", xlab="Number of Edges", ylab="Frequency of Nodes")
 dev.off()
 pdf('LogEdgeDistributionForHumanGraphIntersects.pdf')
-hist(log(vectorForNumberOfEdgesHuman),200,main="Histogram of Edge distribution of Human Graph Intersect", xlab="Number of Edges", ylab="Frequency of Nodes")
+hist(log(vectorForNumberOfEdgesHuman),500,main="Histogram of Edge distribution of Human Graph Intersect", xlab="Number of Edges", ylab="Frequency of Nodes")
 dev.off()
 
 dev.off()
