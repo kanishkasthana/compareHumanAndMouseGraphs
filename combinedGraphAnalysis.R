@@ -1,7 +1,6 @@
 #Script written by Kanishk Asthana to compare the human and mouse graphs
-library('ff')
 humanLogicalGraph=read.csv("humanLogicalGraph.csv", header=TRUE)
-mouseLogicalGraph=read.csv.ffdf("graph_outputMouse.csv", header=TRUE)
+mouseLogicalGraph=read.csv("graph_outputMouse.csv", header=TRUE)
 mouseGeneNamesInGraph=read.csv("geneNamesMouse.csv",header=FALSE,stringsAsFactors = FALSE)
 #Unlisting to perform set operations
 mouseGeneNamesInGraph=unlist(mouseGeneNamesInGraph)
