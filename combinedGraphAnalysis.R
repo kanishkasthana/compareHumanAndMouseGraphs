@@ -21,3 +21,9 @@ humanLogicalGraphIntersectWithMouse=humanLogicalGraph[,commonMouseAndHumanGenes]
 #Converting Column names in mouseLogicalGraph data.frame to uppercase for ease with indexing
 colnames(mouseLogicalGraph)=as.factor(sapply(colnames(mouseLogicalGraph),toupper))
 mouseLogicalGraphIntersectWithHuman=mouseLogicalGraph[,commonMouseAndHumanGenes]
+
+print("Dimensions of human graph intersect:")
+print(dim(humanLogicalGraphIntersectWithMouse))
+
+pritn("Dimensions of mouse graph intersect:")
+print(dim(mouseLogicalGraphIntersectWithHuman))
