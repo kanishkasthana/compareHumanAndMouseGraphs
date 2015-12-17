@@ -1,10 +1,10 @@
 #Script written by Kanishk Asthana to compare the human and mouse graphs
 humanLogicalGraph=read.csv("humanLogicalGraph.csv", header=TRUE)
 mouseLogicalGraph=read.csv("graph_outputMouse.csv", header=TRUE)
-mouseGeneNamesInGraph=read.csv("geneNamesMouse.csv",header=FALSE,stringsAsFactors = FALSE)
+mouseGeneNamesInGraph=read.csv("geneNamesMouse.csv",header=FALSE)
 #Unlisting to perform set operations
 mouseGeneNamesInGraph=unlist(mouseGeneNamesInGraph)
-humanGeneNamesInGraph=read.csv("geneNamesHuman.csv", header=FALSE, stringsAsFactors = FALSE)
+humanGeneNamesInGraph=read.csv("geneNamesHuman.csv", header=FALSE)
 #Unlisting to perform set operations
 humanGeneNamesInGraph=unlist(humanGeneNamesInGraph)
 
@@ -13,8 +13,11 @@ humanGeneNamesInGraph=unlist(humanGeneNamesInGraph)
 #To get a list of genes that is common to both mouse and human we will convert all mouse gene names to uppercase
 # and then take the intersection of human and mouse gene names in the graph
 
-mouseGeneNamesInGraphUPPERCASE=sapply(mouseGeneNamesInGraph,toupper)
+mouseGeneNamesInGraphUPPERCASE=as.factor(sapply(mouseGeneNamesInGraph,toupper))
 #Taking intersection: 13261 common human and mouse genes. Nice!
-commonMouseAndHumanGenes=intersect(humanGeneNamesInGraph,mouseGeneNamesInGraphUPPERCASE)
+commonMouseAndHumanGenes=as.factor(intersect(humanGeneNamesInGraph,mouseGeneNamesInGraphUPPERCASE))
+humanLogicalGraphIntersectWithMouse=humanLogicalGraph[,commonMouseAndHumanGenes]
 
-
+#Converting Column names in mouseLogicalGraph data.frame to uppercase for ease with indexing
+colnames(mouseLogicalGraph)=as.factor(sapply(colnames(mouseLogicalGraph),toupper))
+mouseLogicalGraphIntersectWithHuman=mouseLogicalGraph[,commonMouseAndHumanGenes]
