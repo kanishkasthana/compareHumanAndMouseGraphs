@@ -25,5 +25,5 @@ mouseLogicalGraphIntersectWithHuman=mouseLogicalGraph[,commonMouseAndHumanGenes]
 print("Dimensions of human graph intersect:")
 print(dim(humanLogicalGraphIntersectWithMouse))
 
-pritn("Dimensions of mouse graph intersect:")
+print("Dimensions of mouse graph intersect:")
 print(dim(mouseLogicalGraphIntersectWithHuman))
