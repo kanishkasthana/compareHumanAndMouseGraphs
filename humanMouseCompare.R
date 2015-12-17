@@ -30,5 +30,23 @@ mouseGeneNamesInGraphUPPERCASE=sapply(mouseGeneNamesInGraph,toupper)
 #Taking intersection: 13261 common human and mouse genes. Nice!
 commonMouseAndHumanGenes=intersect(humanGeneNamesInGraph,mouseGeneNamesInGraphUPPERCASE)
 
+mouseGraph=read.csv("graph_outputMouse.csv", header=TRUE)
+
+logicalMouseGraph=mouseGraph!=0
+#Freeing Memory
+rm(mouseGraph)
+
+write.table(logicalMouseGraph,"mouseLogicalGraph.csv", sep=",", quote=FALSE, row.names=FALSE)
+
+#Freeing Up memory
+rm(logicalMouseGraph)
+
+humanGraph=read.csv("graph_outputHuman.csv", header=TRUE)
+
+logicalHumanGraph=humanGraph!=0
+#Freeing Memory
+rm(humanGraph)
+write.table(logicalHumanGraph,"humanLogicalGraph.csv",sep=",", quote=FALSE, row.names=FALSE)
+rm(logicalHumanGraph)
 
 
