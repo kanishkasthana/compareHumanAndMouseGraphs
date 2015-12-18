@@ -39,7 +39,4 @@ hist(log(vectorForNumberOfEdgesMouse),500,main="Histogram of Edge distribution o
 hist(log(vectorForNumberOfEdgesHuman),500,main="Histogram of Edge distribution of Human Graph Intersect", xlab="Number of Edges", ylab="Frequency of Nodes")
 dev.off()
 
-#Damn it appears like there are values only along the diagnal in humans. This sucks but I have to deal with it
-#Also I think I know why this might be happening. There were missing values in the human matrix that Rizi gave me.
-#Let me see if fixing that fixes the problem!
-rownumbers=apply(humanLogicalGraph, 2, function(col){(1:nrow(humanLogicalGraph))[col]})
+#Getting rid of the NA values fixed the problem. But the graph is still very sparse.
