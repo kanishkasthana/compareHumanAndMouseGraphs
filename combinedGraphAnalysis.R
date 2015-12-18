@@ -1,7 +1,12 @@
 #Script written by Kanishk Asthana to compare the human and mouse graphs
 humanLogicalGraph=read.csv("humanLogicalGraph.csv", header=TRUE)
 mouseLogicalGraph=read.csv("mouseLogicalGraph.csv", header=TRUE)
+
+#Setting Diagnal of Both LogicalGraphs to FALSE. i.e. We are ignoring self edges.
+diag(humanLogicalGraph)=FALSE
+diag(mouseLogicalGraph)=FALSE
 mouseGeneNamesInGraph=read.csv("geneNamesMouse.csv",header=FALSE)
+
 #Unlisting to perform set operations
 mouseGeneNamesInGraph=unlist(mouseGeneNamesInGraph)
 humanGeneNamesInGraph=read.csv("geneNamesHuman.csv", header=FALSE)
