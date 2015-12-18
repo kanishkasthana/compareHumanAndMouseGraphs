@@ -35,18 +35,19 @@ mouseGraph=read.csv("graph_outputMouse.csv", header=TRUE)
 logicalMouseGraph=mouseGraph!=0
 #Freeing Memory
 rm(mouseGraph)
-
+gc()
 write.table(logicalMouseGraph,"mouseLogicalGraph.csv", sep=",", quote=FALSE, row.names=FALSE)
 
 #Freeing Up memory
 rm(logicalMouseGraph)
-
+gc()
 humanGraph=read.csv("graph_outputHuman.csv", header=TRUE)
 
 logicalHumanGraph=humanGraph!=0
 #Freeing Memory
 rm(humanGraph)
+gc()
 write.table(logicalHumanGraph,"humanLogicalGraph.csv",sep=",", quote=FALSE, row.names=FALSE)
 rm(logicalHumanGraph)
-
+gc()
 

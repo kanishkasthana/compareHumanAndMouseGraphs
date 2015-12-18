@@ -34,9 +34,7 @@ print(dim(mouseLogicalGraphIntersectWithHuman))
 vectorForNumberOfEdgesHuman=apply(humanLogicalGraphIntersectWithMouse,2,sum)
 vectorForNumberOfEdgesMouse=apply(mouseLogicalGraphIntersectWithHuman,2,sum)
 
-pdf("LogEdgeDistributionForMouseandHumanGraphIntersects.pdf")
-hist(log(vectorForNumberOfEdgesMouse),500,main="Histogram of Edge distribution of Mouse Graph Intersect", xlab="Number of Edges", ylab="Frequency of Nodes")
-hist(log(vectorForNumberOfEdgesHuman),500,main="Histogram of Edge distribution of Human Graph Intersect", xlab="Number of Edges", ylab="Frequency of Nodes")
-dev.off()
+mHist=hist(vectorForNumberOfEdgesMouse,500,main="Histogram of Edge distribution of Mouse Graph Intersect", xlab="Number of Edges", ylab="Frequency of Nodes")
+hHist=hist(vectorForNumberOfEdgesHuman,500,main="Histogram of Edge distribution of Human Graph Intersect", xlab="Number of Edges", ylab="Frequency of Nodes")
 
 #Getting rid of the NA values fixed the problem. But the graph is still very sparse.
