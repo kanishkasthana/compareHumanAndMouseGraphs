@@ -1,6 +1,6 @@
 #Script written by Kanishk Asthana to compare the human and mouse graphs
 humanLogicalGraph=read.csv("humanLogicalGraph.csv", header=TRUE)
-mouseLogicalGraph=read.csv("graph_outputMouse.csv", header=TRUE)
+mouseLogicalGraph=read.csv("mouseLogicalGraph.csv", header=TRUE)
 mouseGeneNamesInGraph=read.csv("geneNamesMouse.csv",header=FALSE)
 #Unlisting to perform set operations
 mouseGeneNamesInGraph=unlist(mouseGeneNamesInGraph)
