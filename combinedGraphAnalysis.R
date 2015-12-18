@@ -59,6 +59,20 @@ numberOfCommonEdgesVector=sapply(1:length(commonMouseAndHumanGenes),function(i){
   return(length(commonEdgesInGraphs))
 })
 
+#Also storing Names of all common Edges
+allCommonEdges=sapply(1:length(commonMouseAndHumanGenes),function(i){
+  humanEdgesInGraph=humanGeneNamesInGraph[humanLogicalGraphIntersectWithMouse[,i]]
+  mouseEdgesInGraph=mouseGeneNamesInGraphUPPERCASE[mouseLogicalGraphIntersectWithHuman[,i]]
+  commonEdgesInGraphs=intersect(humanEdgesInGraph,mouseEdgesInGraph)
+  return(commonEdgesInGraphs)
+})
+
+allCommonEdges=as.character(unlist(allCommonEdges))
+
+write.table(allCommonEdges,"commonEdgeNamesVector.txt",row.names=FALSE, col.names=FALSE, quote=FALSE)
+
+write.table(unique(allCommonEdges),"uniqueCommonEdgeNamesVector.txt", row.names=FALSE, col.names=FALSE, quote=FALSE)
+
 write.table(numberOfCommonEdgesVector,"commonEdgesVector.csv",sep=",",row.names=FALSE, col.names=FALSE, quote=FALSE)
 
 commonHist=hist(numberOfCommonEdgesVector,50, main="Histogram of Common Edges Distribution for Human and Mouse Graphs", xlab="Number of Edges", ylab="Frequency of Nodes")
