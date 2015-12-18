@@ -21,6 +21,9 @@ humanGeneNamesInGraph=as.factor(unlist(humanGeneNamesInGraph))
 mouseGeneNamesInGraphUPPERCASE=as.factor(sapply(mouseGeneNamesInGraph,toupper))
 #Taking intersection: 13261 common human and mouse genes. Nice!
 commonMouseAndHumanGenes=as.factor(intersect(humanGeneNamesInGraph,mouseGeneNamesInGraphUPPERCASE))
+
+write.table(commonMouseAndHumanGenes,"commonMouseAndHumanGenes.csv",sep=",", row.names=FALSE,col.names=FALSE, quote=FALSE)
+
 humanLogicalGraphIntersectWithMouse=humanLogicalGraph[,commonMouseAndHumanGenes]
 
 #Converting Column names in mouseLogicalGraph data.frame to uppercase for ease with indexing
