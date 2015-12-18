@@ -65,3 +65,19 @@ commonHist=hist(numberOfCommonEdgesVector,50, main="Histogram of Common Edges Di
 pdf("LogPlotForNumberOfCommonEdgesIntheHumanAndMouseGraphs.pdf")
 plot(commonHist$breaks[2:length(commonHist$breaks)], log(commonHist$counts), type='S', xlab="Number of Edges", ylab="Log of Frequency of Nodes", main="Log plot of Histogram of Common Edges distribution for Human and Mouse Graphs")
 dev.off()
+
+neurologicalProcessGenes=read.csv("genesAssociateWithNeurologicalProcessesGoTerm.txt",sep=",",header=FALSE)
+
+#Converting to Factor List for Indexing
+neurologicalProcessGenes=as.factor(unlist(neurologicalProcessGenes))
+
+#Getting complementary Set to neurological process genes
+complementToNeurologicalProcessGenes=as.factor(setdiff(commonMouseAndHumanGenes,neurologicalProcessGenes))
+
+#Subsetting graphs
+neurologicalProcessHLGIWM=humanLogicalGraphIntersectWithMouse[,neurologicalProcessGenes]
+neurologicalProcessMLGIWH=mouseLogicalGraphIntersectWithHuman[,neurologicalProcessGenes]
+
+complementNeurologicalProcessHLGIWM=humanLogicalGraphIntersectWithMouse[,complementToNeurologicalProcessGenes]
+complementNeurologicalProcessMLGIWH=mouseLogicalGraphIntersectWithHuman[,complementToNeurologicalProcessGenes]
+
