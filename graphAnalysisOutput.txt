@@ -1,8 +1,38 @@
 [1] "Human Graph Sparsity:"
-[1] 0.01014059
+[1] 0.01006518
 [1] "Mouse Graph Sparsity:"
-[1] 0.01401309
+[1] 0.01393768
 [1] "Intersect Graph Sparsity:"
-[1] 0.0002185789
+[1] 0.0001431698
 [1] "Total Number of Edges in Intersect graph:"
-[1] 38438
+[1] 25177
+      [,1]           [,2]           [,3]      
+ [1,] "POLE2"        "KLF17"        "KIAA1244"
+ [2,] "KLHL2"        "GATSL2"       "CCDC25"  
+ [3,] "TBC1D31"      "TAS2R5"       "HIATL1"  
+ [4,] "NELL2"        "FNDC1"        "NAV2"    
+ [5,] "ISG15"        "PRUNE2"       "HAPLN1"  
+ [6,] "FEZ2"         "TECRL"        "SPEG"    
+ [7,] "EXOSC6"       "POLR3A"       "TESPA1"  
+ [8,] "SERPINH1"     "HAS2"         "DHRS7C"  
+ [9,] "TRIQK"        "LARP6"        "GRAMD1B" 
+[10,] "MRPL1"        "C3ORF70"      "FBXO28"  
+[11,] "MBNL1"        "UCK2"         "ITPKA"   
+[12,] "FAM114A2"     "IPPK"         "METTL3"  
+[13,] "DLL4"         "PCSK9"        "SLC31A1" 
+[14,] "CTD.2349B8.1" "RAD54B"       "C5ORF17" 
+[15,] "SMAD5"        "RASGRF2"      "OSBPL8"  
+[16,] "C1ORF131"     "RP11.302M6.4" "CAP1"    
+[17,] "ZNF277"       "ANXA7"        "ULBP2"   
+[18,] "SLC25A19"     "RESP18"       "DZIP3"   
+[19,] "SDC2"         "ACSM2A"       "ATF7IP2" 
+[20,] "RUFY4"        "AC069368.3"   "SPEG"    
+[21,] "AP1S3"        "FLYWCH2"      "NPC1L1"  
+[22,] "DENND4B"      "TG"           "COX7A2"  
+[23,] "KCNG3"        "LINS"         "FNDC1"   
+[24,] "C17ORF80"     "FDX1"         "SH3YL1"  
+[25,] "ZNF268"       "RALGDS"       "DOCK3"   
+[26,] "ESM1"         "MYLPF"        "SUB1"    
+[27,] "XPO7"         "SLC2A1"       "BRE"     
+[28,] "NAIP"         "HTR3C"        "DCXR"    
+[29,] "CNOT8"        "ZCCHC17"      "CAPN5"   
