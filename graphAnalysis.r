@@ -7,7 +7,7 @@ mouseGraphLogical=(mouseGraph!=0)
 intersectGraphLogical=((humanGraphLogical+mouseGraphLogical)>1)
 intersectEdgeDistribution=apply(intersectGraphLogical,2,sum)
 pdf("distributionOfGraphIntersect.pdf")
-hist(intersectEdgeDistribution,100)
+hist(intersectEdgeDistribution,50)
 dev.off()
 
 sink("graphAnalysisOutput.txt")
@@ -20,5 +20,8 @@ print(mouseSparsity)
 intersectSparsity=sum(intersectGraphLogical)/(nrow(intersectGraphLogical)*ncol(intersectGraphLogical))
 print("Intersect Graph Sparsity:")
 print(intersectSparsity)
+
+print("Total Number of Edges in Intersect graph:")
+print(sum(intersectGraphLogical))
 
 library('igraph')
