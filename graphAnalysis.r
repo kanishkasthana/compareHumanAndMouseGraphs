@@ -54,6 +54,6 @@ cliqueNames=apply(cliqueData,1,function(rownumbers){
 
 cliqueNames=t(cliqueNames)
 print(cliqueNames)
-write.table(cliqueNames,"cliqueNames.csv", sep=",", quote=FALSE, row.names=FALSE)
+write.table(cliqueNames,"cliqueNames.txt", sep=",", quote=FALSE, row.names=FALSE)
 
 
