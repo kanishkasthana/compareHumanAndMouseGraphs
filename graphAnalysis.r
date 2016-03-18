@@ -44,6 +44,7 @@ cliqueNames=apply(cliqueData,1,function(rownumbers){
     return(geneNames[rownumbers])
 })
 
+cliqueNames=t(cliqueNames)
 print(cliqueNames)
 write.table(cliqueNames,"cliqueNames.csv", sep=",", quote=FALSE, row.names=FALSE)
 
