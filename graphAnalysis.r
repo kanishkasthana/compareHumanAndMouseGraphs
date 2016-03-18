@@ -2,15 +2,10 @@
 humanGraph=read.csv("graph_outputHumanAfterBugFix.csv",header=TRUE)
 #Labeling both columns and rows
 rownames(humanGraph)=colnames(humanGraph)
-#Temporarily taking only a subset of the graphs for writting the program
-#humanGraph=humanGraph[1:1000,1:1000]
-gc()#Garbage Collection to free up memory
+
 mouseGraph=read.csv("graph_outputMouseAfterBugFix.csv",header=TRUE)
 #Labeling both column and rows
 rownames(mouseGraph)=colnames(mouseGraph)
-#Temporarily taking only a subset of the graphs for writting the program
-#mouseGraph=mouseGraph[1:1000,1:1000]
-gc()#Garbage Collection to free up memory
 
 humanGraphLogical=(humanGraph!=0)
 mouseGraphLogical=(mouseGraph!=0)
@@ -33,12 +28,23 @@ print("Intersect Graph Sparsity:")
 print(intersectSparsity)
 
 print("Total Number of Edges in Intersect graph:")
+#Setting Diagonal equal to false. We are not interested in self edges.
+diag(intersectGraphLogical)=FALSE
 print(sum(intersectGraphLogical))
 
 library('igraph')
 
 intersectIGraph=graph.adjacency(intersectGraphLogical, mode = c("undirected"), weighted = NULL, diag=FALSE)
 
-intersectGraphCliques=max_cliques(intersectIGraph,min=2,file="intersectGraphCliques.txt")
+#Most of the cliques have 2 vetices. I get 29 groups with 3 or more vertices. Lets see what these are:
+intersectGraphCliques=max_cliques(intersectIGraph,min=3,file="intersectGraphCliques.txt")
+cliqueData=read.table("intersectGraphCliques.txt",header=FALSE)
+geneNames=colnames(intersectGraphLogical)
+cliqueNames=apply(cliqueData,1,function(rownumbers){
+    return(geneNames[rownumbers])
+})
+
+print(cliqueNames)
+write.table(cliqueNames,"cliqueNames.csv", sep=",", quote=FALSE, row.names=FALSE)
 
 
