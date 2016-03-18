@@ -4,3 +4,5 @@
 [1] 0.01401309
 [1] "Intersect Graph Sparsity:"
 [1] 0.0002185789
+[1] "Total Number of Edges in Intersect graph:"
+[1] 38438
