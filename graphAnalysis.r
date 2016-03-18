@@ -21,7 +21,7 @@ pdf("distributionOfGraphIntersect.pdf")
 hist(intersectEdgeDistribution,50)
 dev.off()
 
-sink("graphAnalysisOutput.txt")
+#sink("graphAnalysisOutput.txt")
 humanSparsity=sum(humanGraphLogical)/(nrow(humanGraphLogical)*ncol(humanGraphLogical))
 print("Human Graph Sparsity:")
 print(humanSparsity)
