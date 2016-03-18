@@ -8,6 +8,7 @@ intersectGraphLogical=((humanGraphLogical+mouseGraphLogical)>1)
 intersectEdgeDistribution=apply(intersectGraphLogical,2,sum)
 pdf("distributionOfGraphIntersect.pdf")
 hist(intersectEdgeDistribution,100)
+dev.off()
 
 sink("graphAnalysisOutput.txt")
 humanSparsity=sum(humanGraphLogical)/(nrow(humanGraphLogical)*ncol(humanGraphLogical))
